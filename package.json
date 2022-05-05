@@ -1,0 +1,41 @@
+{
+  "name": "fastest-finger-first",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "scripts": {
+    "watch:build": "npx webpack -w",
+    "watch:server": "nodemon dist/server.js",
+    "dev": "npm-run-all --parallel watch:*"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mediapipe/camera_utils": "0.3.1640029074",
+    "@mediapipe/drawing_utils": "^0.3.1620248257",
+    "@mediapipe/hands": "^0.3.1632795355",
+    "express": "^4.17.3",
+    "mathjs": "^10.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "socket.io": "^4.4.1",
+    "socket.io-client": "^4.4.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.21",
+    "@types/react": "^17.0.40",
+    "@types/react-dom": "^17.0.13",
+    "@types/uuid": "^8.3.4",
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^3.0.23",
+    "ts-loader": "^9.2.8",
+    "typescript": "^4.6.2",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

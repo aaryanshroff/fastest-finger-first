@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "outDir": "./public/js/",
+      "noImplicitAny": true,
+      "module": "esnext",
+      "target": "es5",
+      "jsx": "react",
+      "allowSyntheticDefaultImports": true,
+      "moduleResolution": "node"
+    },
+    "include": [
+        "src/client/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

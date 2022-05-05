@@ -1,0 +1,23 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer components {
+  .my-video-container {
+    @apply flex flex-col items-center px-6;
+  }
+
+  .my-video-el {
+    @apply rounded-xl my-6;
+  }
+
+  .my-display {
+    @apply text-xl font-bold;
+  }
+
+  .my-display-lg {
+    @apply text-2xl font-bold;
+  }
+}
