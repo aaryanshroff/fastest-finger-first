@@ -14,7 +14,7 @@ const STUN_SERVER = {
 };
 
 const RTCWrapper: React.FC<IRTCWrapperProps> = () => {
-  const socket = io("localhost:4001");
+  const socket = io("/");
   const roomID = window.location.pathname.split("/")[0];
 
   const localVideoRef = useRef<HTMLVideoElement>(null);
@@ -28,8 +28,8 @@ const RTCWrapper: React.FC<IRTCWrapperProps> = () => {
     try {
       if (event.candidate) {
         socket.emit("ice candidate", {
-          "candidate": event.candidate,
-          "roomID": roomID,
+          candidate: event.candidate,
+          roomID: roomID,
         });
       }
     } catch (error) {
