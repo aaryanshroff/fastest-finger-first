@@ -6,7 +6,9 @@
   "scripts": {
     "watch:build": "npx webpack -w",
     "watch:server": "nodemon dist/server.js",
-    "dev": "npm-run-all --parallel watch:*"
+    "dev": "npm-run-all --parallel watch:*",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "author": "",
   "license": "ISC",

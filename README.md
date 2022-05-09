@@ -13,3 +13,5 @@ A multiplayer game built with that allows you to practise American Sign Language
 - SocketIO (shareable room links and points system)
 - WebRTC (peer-to-peer video calling)
 - MediaPipe (hand gesture estimation)
+
+##
