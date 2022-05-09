@@ -10,7 +10,7 @@ const USER_MEDIA_CONFIG = {
 };
 
 const STUN_SERVER = {
-  iceServers: [{ urls: "stun:stun1.l.google.com:19302" }],
+  iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
 };
 
 const RTCWrapper: React.FC<IRTCWrapperProps> = () => {
@@ -39,9 +39,17 @@ const RTCWrapper: React.FC<IRTCWrapperProps> = () => {
 
   // Receiving other user's media stream
   const handleTrackEvent = (event: RTCTrackEvent) => {
+    console.log("Received remote stream");
     if (remoteVideoRef) {
       remoteVideoRef.current.srcObject = event.streams[0];
       socket.emit("ready", roomID);
+    }
+  };
+
+  // Checking if connection is established
+  const handleIceConnectionStateChange = (event: Event) => {
+    if (pc.iceConnectionState === "connected") {
+      console.log("Connected to other user");
     }
   };
 
@@ -63,6 +71,7 @@ const RTCWrapper: React.FC<IRTCWrapperProps> = () => {
   const pc = new RTCPeerConnection(STUN_SERVER);
   pc.onicecandidate = handleIceCandidateEvent;
   pc.ontrack = handleTrackEvent;
+  pc.oniceconnectionstatechange = handleIceConnectionStateChange;
 
   useEffect(() => {
     getUserMedia();
