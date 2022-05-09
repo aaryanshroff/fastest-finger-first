@@ -3,8 +3,7 @@
 **/.DS_Store
 
 # React TS build output
-# Push app.js for Heroku
-# public/js
+public/js
 
 # Logs
 logs
@@ -97,8 +96,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-# Push dist for Heroku
-# dist
+dist
 
 # Gatsby files
 .cache/
