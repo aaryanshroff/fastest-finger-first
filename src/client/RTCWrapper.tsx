@@ -32,16 +32,19 @@ const STUN_SERVER = {
     { urls: "stun:stun.xten.com" },
     {
       urls: "turn:numb.viagenie.ca",
+      // Public TURN servers so credential in code okay
       credential: "muazkh",
       username: "webrtc@live.com",
     },
     {
       urls: "turn:192.158.29.39:3478?transport=udp",
+      // Public TURN servers so credential in code okay
       credential: "JZEOEt2V3Qb0y27GRntt2u2PAYA=",
       username: "28224511:1379330808",
     },
     {
       urls: "turn:192.158.29.39:3478?transport=tcp",
+      // Public TURN servers so credential in code okay
       credential: "JZEOEt2V3Qb0y27GRntt2u2PAYA=",
       username: "28224511:1379330808",
     },
@@ -75,10 +78,7 @@ const RTCWrapper: React.FC<IRTCWrapperProps> = () => {
   // Receiving other user's media stream
   const handleTrackEvent = (event: RTCTrackEvent) => {
     if (remoteVideoRef) {
-      console.log("Received remote stream");
-      console.log("Event", event);
       remoteVideoRef.current.srcObject = event.streams[0];
-      remoteVideoRef.current.play();
     }
   };
 

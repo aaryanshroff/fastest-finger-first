@@ -64,7 +64,6 @@ const MainView: React.FC<IMainViewProps> = (props) => {
             className="my-video-el"
             autoPlay
             playsInline
-            muted
           />
         </div>
         <div className="my-video-container">
@@ -76,7 +75,6 @@ const MainView: React.FC<IMainViewProps> = (props) => {
             className="my-video-el"
             autoPlay
             playsInline
-            muted
           />
         </div>
       </div>
