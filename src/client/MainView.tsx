@@ -16,7 +16,6 @@ const MainView: React.FC<IMainViewProps> = (props) => {
       } else if (newPrompt.answerer === props.socket.id) {
         setMyPoints((p) => p + 1);
       } else {
-        
         setOpponentPoints((p) => p + 1);
       }
       setPrompt(newPrompt.letter);
@@ -65,6 +64,7 @@ const MainView: React.FC<IMainViewProps> = (props) => {
             className="my-video-el"
             autoPlay
             playsInline
+            muted
           />
         </div>
         <div className="my-video-container">
@@ -76,6 +76,7 @@ const MainView: React.FC<IMainViewProps> = (props) => {
             className="my-video-el"
             autoPlay
             playsInline
+            muted
           />
         </div>
       </div>
