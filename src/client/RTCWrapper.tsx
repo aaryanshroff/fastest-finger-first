@@ -40,9 +40,9 @@ const RTCWrapper: React.FC<IRTCWrapperProps> = () => {
   // Receiving other user's media stream
   const handleTrackEvent = (event: RTCTrackEvent) => {
     console.log("Received remote stream");
+    console.log(remoteVideoRef);
     if (remoteVideoRef) {
       remoteVideoRef.current.srcObject = event.streams[0];
-      socket.emit("ready", roomID);
     }
   };
 
@@ -50,6 +50,7 @@ const RTCWrapper: React.FC<IRTCWrapperProps> = () => {
   const handleIceConnectionStateChange = (event: Event) => {
     if (pc.iceConnectionState === "connected") {
       console.log("Connected to other user");
+      socket.emit("ready", roomID);
     }
   };
 
