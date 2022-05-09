@@ -41,7 +41,7 @@ const RTCWrapper: React.FC<IRTCWrapperProps> = () => {
   const handleTrackEvent = (event: RTCTrackEvent) => {
     if (remoteVideoRef) {
       console.log("Received remote stream");
-      console.log(event.streams[0]);
+      console.log(event);
       remoteVideoRef.current.srcObject = event.streams[0];
     }
   };
