@@ -1,7 +1,8 @@
+import { Results } from "@mediapipe/hands";
 import { train_angles, train_hand_connections } from "../constants";
 import { angle_between, mse } from "../utils";
 
-const getTopPrediction = (results) => {
+const getTopPrediction = (results: Results) => {
   if (results.multiHandLandmarks) {
     for (const landmarks of results.multiHandLandmarks) {
       const connections = train_hand_connections.map((t) => {

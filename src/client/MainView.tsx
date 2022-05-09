@@ -1,5 +1,5 @@
 import React, { MutableRefObject, useEffect, useState } from "react";
-import { Hands } from "@mediapipe/hands";
+import { Hands, Results } from "@mediapipe/hands";
 import { getTopPrediction } from "./helpers";
 import { Socket } from "socket.io-client";
 
@@ -29,7 +29,7 @@ const MainView: React.FC<IMainViewProps> = (props) => {
     }
   }, [topPrediction]);
 
-  const onPredictionResults = (results) => {
+  const onPredictionResults = (results: Results) => {
     const topPred = getTopPrediction(results);
     setTopPrediction(topPred);
   };
