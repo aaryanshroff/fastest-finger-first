@@ -48,6 +48,7 @@ const RTCWrapper: React.FC<IRTCWrapperProps> = () => {
 
   // Checking if connection is established
   const handleIceConnectionStateChange = (event: Event) => {
+    console.log(pc.iceConnectionState);
     if (pc.iceConnectionState === "connected") {
       console.log("Connected to other user");
       socket.emit("ready", roomID);
